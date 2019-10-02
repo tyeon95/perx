@@ -1,0 +1,11 @@
+.input-container {
+  display: flex;
+  flex: 1;
+}
+
+.input-text {
+  display: flex;
+  flex: 1;
+  border-color: #AEAEAE;
+  border-style: solid;
+}
