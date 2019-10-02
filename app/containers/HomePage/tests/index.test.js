@@ -1,18 +1,34 @@
 import React from 'react';
-import { render } from 'react-testing-library';
-import { IntlProvider } from 'react-intl';
-
-import HomePage from '../index';
+import { shallow } from 'enzyme';
+import Head from 'components/Head';
+import TextInput from 'components/TextInput';
+import SectionList from 'components/SectionList';
+import { HomePage } from '../index';
 
 describe('<HomePage />', () => {
-  it('should render and match the snapshot', () => {
-    const {
-      container: { firstChild },
-    } = render(
-      <IntlProvider locale="en">
-        <HomePage />
-      </IntlProvider>,
+  it('should render the HomePage component', () => {
+    const wrapper = shallow(
+      <HomePage
+        dispatch={() => {}}
+        fetch={() => {}}
+        data={{ repos: [], orgs: [] }}
+        isFetching={{ repos: false, orgs: false }}
+      />,
     );
-    expect(firstChild).toMatchSnapshot();
+
+    expect(
+      wrapper.containsMatchingElement(
+        <main className="main-layout">
+          <Head title="Github stalk" />
+          <article>
+            <h1>Stalk thy github</h1>
+            <TextInput />
+            <div className="main-layout__content">
+              <SectionList />
+            </div>
+          </article>
+        </main>,
+      ),
+    ).toBe(true);
   });
 });
