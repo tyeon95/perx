@@ -9,10 +9,10 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      statements: 98,
-      branches: 91,
-      functions: 98,
-      lines: 98,
+      statements: 80,
+      branches: 80,
+      functions: 80,
+      lines: 80,
     },
   },
   moduleDirectories: ['node_modules', 'app'],
@@ -23,6 +23,7 @@ module.exports = {
   },
   setupFilesAfterEnv: [
     '<rootDir>/internals/testing/test-bundler.js',
+    '<rootDir>/internals/testing/enzyme-setup.js',
     'react-testing-library/cleanup-after-each',
   ],
   setupFiles: ['raf/polyfill'],
