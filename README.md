@@ -15,7 +15,6 @@ Excluded `.env` from `.gitignore` since no security issues from exposing github 
 - Setup: `yarn`
 - Test: `yarn test`
 - Run: `yarn start`
-- Buiild: `yarn build`
-
+- Build: `yarn build`
 
 Note: _Nice UI_ is relative 😉
